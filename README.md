@@ -1,5 +1,4 @@
 # NixoRice
 A custom rice I am working on for my NixOS
 
-# Placement
-Make sure to rename and move the config folder to your specified location and rename it to ".config"
+This is just to store the files on a server, as its no where near done yet
