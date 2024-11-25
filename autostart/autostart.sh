@@ -1,3 +1,0 @@
-## Run 
-wlogout
-sww

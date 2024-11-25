@@ -1,0 +1,234 @@
+
+{ config, pkgs, ... }:
+
+{
+  imports =
+    [ # takes local harware scan from /etc/nixos/~hardware file~
+      ./hardware-configuration.nix
+    ];
+
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
+  networking.hostName = "tayvall"; # HostName
+
+  # Enable networking
+  networking.networkmanager.enable = true;
+
+  # time zone.
+  time.timeZone = "Europe/London";
+
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_GB.UTF-8";
+
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_GB.UTF-8";
+    LC_IDENTIFICATION = "en_GB.UTF-8";
+    LC_MEASUREMENT = "en_GB.UTF-8";
+    LC_MONETARY = "en_GB.UTF-8";
+    LC_NAME = "en_GB.UTF-8";
+    LC_NUMERIC = "en_GB.UTF-8";
+    LC_PAPER = "en_GB.UTF-8";
+    LC_TELEPHONE = "en_GB.UTF-8";
+    LC_TIME = "en_GB.UTF-8";
+  };
+  
+  services.xserver.displayManager.lightdm.greeters.gtk = {
+    enable = true;
+    theme.name = "Adwaita-dark";
+    #extraConfig = ''
+    #  background = "/home/tay/Pictures/Wallpaper/xfce-shapes.svg";
+    #'';
+  };
+
+  # Enable the X11 windowing system.
+  services.xserver.enable = true;
+
+  environment.variables = {
+    XDG_SESSION_TYPE = "wayland";
+  };
+  
+  hardware.opengl.enable = true;
+  
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true; #powers bluetooth on when booting
+  #blueman service
+  services.blueman.enable = true;
+
+  # Enable the XFCE DE
+  services.xserver.desktopManager.xfce.enable = false;
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "gb";
+    variant = "";
+  };
+
+  # Configure console keymap
+  console.keyMap = "uk";
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  # Enable sound with pipewire.
+  hardware.pulseaudio.enable = false;
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    jack.enable = true;
+
+  };
+
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.tay = {
+    isNormalUser = true;
+    description = "Tay";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+    #  thunderbird
+    ];
+  };
+  
+  # fingerprint scanner
+  services.fprintd = {
+    enable = true;
+    tod.enable = true;
+    tod.driver = pkgs.libfprint-2-tod1-goodix-550a;
+  };
+  
+  # theme
+  environment.variables = {
+    GTK_THEME = "Adwaita-dark";
+    GTK_APPLICATION_PREFER_DARK_THEME = "1";
+  };
+
+  # Install firefox.
+  programs.firefox.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim # text editor
+    wget #get stuff from the web
+    git #github stuff
+    spotify #music
+    neofetch #device info
+    waybar #toolbar
+    rofi-wayland #search bar
+    # eww #widget (ElKowar's Wacky Widgets)
+    wlogout #logout ability
+    vesktop #vencord for discord
+    ascii-image-converter #self explanitory
+    vscodium #code editor
+    cmatrix
+    speedcrunch # calculator
+    unzip # unzipper for .zip file format
+    kitty # alternative terminal emulator
+    sqlitebrowser # sql database (db browser) 
+    pavucontrol # audio control
+    pulseaudio # terminal audio control
+    libreoffice
+    chromium
+    cava
+    neovim
+    smile # emoji picker
+    appimage-run # runs appimages
+    blueman #bluetooth manager
+    gpick #colour picker
+    wine #windows emulator
+    dunst #notification daemons
+    libnotify #implimentation of desktop notifications
+    swww #wallpaper switcher
+    networkmanagerapplet #network manager
+    evtest #keytracker
+    # qt5ct #configure Qt5 (themes and customizations)
+    # qt6ct #configure Qt6 (themes and customizations)
+    light #manage display brightness
+    hyprlock #lock the screen for hyprland
+    feh #image viewer
+    playerctl
+    python3
+    polkit_gnome
+    xfce.thunar
+];
+
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    awesome
+    nerdfonts
+  ];
+
+  #enable hyprland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  # setting pkgs to have sudo permisions
+  security.sudo.extraRules = [
+    { 
+      users = ["tay"];
+      commands = [
+        { 
+          command = "/run/current-system/sw/bin/light";
+          options = [ "NOPASSWD" ];
+        }
+      ];
+    }
+  ];
+
+  # manages how windows interact
+  # xdg.portal.enable = true;
+  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
+  # enable GNOME keyring
+  services.gnome.gnome-keyring.enable = true;
+  
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "24.05"; # Did you read the comment?
+
+}
