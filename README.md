@@ -2,12 +2,10 @@
 # NixOS Rice Configuration
 
 My personal NixOS setup.
+Im planning to make a basic hyprland that is easiy to configure and can be a good starting point for new NixOS users
 
-This is just a start at the moment and plan on creating a basic setup that looks good and can be used as a base starting point for beginners.
-
-**THIS IS A WORK IN PROGRESS**
-
-I am just starting out so everything is messy and janky.
+>**!!THIS IS A WORK IN PROGRESS!!**
+>I am just starting this so everything is messy and janky. 
 
 ## Table of Contents
 - [Hyprland Keybinds](#-Keycombos)
@@ -17,9 +15,16 @@ I am just starting out so everything is messy and janky.
 
 
 ## Install
-please ensure the **nixos** folder and all its .nix files are placed into **/etc/nixos** as I have no clue if it build outside that... 
 
-The .config folder should also be placed in the respective **$HOME/user/.config** file path
+>‼️ CAUTION‼️
+> ensure you change the configs 
+(update me -dev)
+
+1. temporarily install git with ``nix-shell -p git`` and clone this repository using `sudo git clone https://github.com/Tayvall/NixoRice/` then cd into the cloned repository `cd NixoRice`
+
+2. ensure you remove my `harware-configuration.nix` and replace it with yours. remove it with `sudo rm -r hardware-configuration.nix` while inside the cloned repository. Then generate your `harware-configuration.nix` with `nixos-generate-config .#`
+
+3. The .config folder should also be placed in the respective **$HOME/user/.config** file path
 
 -- once files are placed in the correct file paths run `sudo nixos-rebuild switch`
 
@@ -29,71 +34,72 @@ The .config folder should also be placed in the respective **$HOME/user/.config*
 
 | Key Combination        | Action                       |
 |------------------------|------------------------------|
-|Super + Q| "killactive"|
-|Super + Delete| "exit"|
-|Super + W| "togglefloating"|
+|Super + Q| "kill active window"|
+|Super + Delete| "lockscreen/logout"|
+|Super + W| "toggle window floating"|
 |Super + G| "togglegroup"|
 |Alt + Return| "fullscreen"|
-|Super + Alt + S| "exec, dunst"|
-|Super + L| "exec, hyprlock"|
-|Control + Alt + S| "exec, wlogout -b 6"|
-|Super + C| "exec, codium"|
-|Super + T| "exec, kitty"|
-|Super + E| "exec, thunar"|
-|Super + F| "exec, chromium"|
-|Super + D| "exec, vesktop"|
-|Super + S| "exec, spotify"|
-|Super + R| "exec, pkill rofi \|\| rofi -show drun"|
-|Control + Alt + W| "exec, pkill waybar \|\| waybar"|
-|Super + F1| "exec, pactl set-sink-mute @DEFAULT_SINK@ toggle"|
-|Super + F2| "exec, pactl -- set-sink-volume 0 -10%"|
-|Super + F3| "exec, pactl -- set-sink-volume 0 +10%"|
-|Super + F4| "exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle"|
-|F5| "exec, playerctl play-pause"|
-|F7| "exec, playerctl next"|
-|F6| "exec, playerctl previous"|
-|Super + F11| "exec, sudo light -U 10"|
-|Super + Shift + F11| "exec, sudo light -U 5"|
-|Super + F12| "exec, sudo light -A 10"|
-|Super + Shift + F12| "exec, sudo light -A 5"|
-|Super + Left| "movefocus, l"|
-|Super + Right| "movefocus, r"|
-|Super + Up| "movefocus, u"|
-|Super + Down| "movefocus, d"|
-|Alt + Tab| "movefocus, d"|
+|Super + Alt + S| "execute dunst"|
+|Super + L| "execute hyprlock"|
+|Control + Alt + S| "execute wlogout"|
+|Super + C| "execute codium"|
+|Super + T| "execute kitty"|
+|Super + E| "execute thunar"|
+|Super + F| "execute chromium"|
+|Super + D| "execute vesktop"|
+|Super + S| "execute spotify"|
+|Super + R| "toggle rofi"|
+|Control + Alt + W| "restart waybar"|
+|Super + F1| "toggle mute"|
+|Super + F2| "-10% volume"|
+|Super + F3| "+10% volume"|
+|Super + F4| "mute mic"|
+|F5| "play/pause"|
+|F7| "next song"|
+|F6| "previous song"|
+|Super + F11| "reduce display by 10"|
+|Super + Shift + F11| "reduce display by 5"|
+|Super + F12| "increase display by 10"|
+|Super + Shift + F12| "increase display by 5"|
+|Super + Left| "move window focus left"|
+|Super + Right| "move window focus right"|
+|Super + Up| "move window focus up"|
+|Super + Down| "move window focus down"|
+|Alt + Tab| "move window focus"|
 |Super + 1| "workspace, 1"|
 |Super + 2| "workspace, 2"|
 |Super + 3| "workspace, 3"|
 |Super + 4| "workspace, 4"|
 |Super + 5| "workspace, 5"|
-|Super + Shift + Right| "resizeactive, 10 0"|
-|Super + Shift + Left| "resizeactive, -10 0"|
-|Super + Shift + Up| "resizeactive, 0 -10"|
-|Super + Shift + Down| "resizeactive, 0 10"|
-|Super + Shift + L| "movewindow, l"|
-|Super + Shift + R| "movewindow, r"|
-|Super + Shift + U| "movewindow, u"|
-|Super + Shift + D| "movewindow, d"|
+|Super + Shift + Right| "resize active window to right"|
+|Super + Shift + Left| "resize active window to left"|
+|Super + Shift + Up| "resize active window to up"|
+|Super + Shift + Down| "resize active window to down"|
+|Super + Shift + L| "move window left"|
+|Super + Shift + R| "move window right"|
+|Super + Shift + U| "move window up"|
+|Super + Shift + D| "move window down"|
 |Super + Shift + 1| "movetoworkspace, 1"|
 |Super + Shift + 2| "movetoworkspace, 2"|
 |Super + Shift + 3| "movetoworkspace, 3"|
 |Super + Shift + 4| "movetoworkspace, 4"|
 |Super + Shift + 5| "movetoworkspace, 5"|
-|Super + Mouse Down| "workspace, e+1"|
-|Super + Mouse Up| "workspace, e-1"|
-|Super + Mouse Button 272| "movewindow"|
-|Super + Mouse Button 273| "resizewindow"|
-|Super + Alt + S| "movetoworkspacesilent, special"|
-|Super + Z| "togglespecialworkspace"|
+|Super + Mouse Down| "scroll through worspace, up"|
+|Super + Mouse Up| "scroll through worspace, down"|
+|Super + Mouse Button 272| "movewindow with mouse"|
+|Super + Mouse Button 273| "resizewindow with mouse"|
+|Super + Alt + S| "move to seperate workspace"|
+|Super + Z| "toggle the seperate workspace"|
 |Super + J| "togglesplit"|
-|Super + Alt + 1| "movetoworkspacesilent, 1"|
-|Super + Alt + 2| "movetoworkspacesilent, 2"|
-|Super + Alt + 3| "movetoworkspacesilent, 3"|
-|Super + Alt + 4| "movetoworkspacesilent, 4"|
-|Super + Alt + 5| "movetoworkspacesilent, 5"|
+|Super + Alt + 1| "movetoworkspace, 1 silently"|
+|Super + Alt + 2| "movetoworkspace, 2 silently"|
+|Super + Alt + 3| "movetoworkspace, 3 silently"|
+|Super + Alt + 4| "movetoworkspace, 4 silently"|
+|Super + Alt + 5| "movetoworkspace, 5 silently"|
 
 
 ## To-Do
+- **fix themeing** I have messed up with the themes so need to revisit it
 - **Flakes** -modularize my config to allow easier configuration. (move to flakes).
 - **HyperPanel** -add some more customization.
 - **Clean Up** -remove unessesary configs and setups to keep a clean basis to later improve on. 
