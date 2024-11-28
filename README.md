@@ -17,18 +17,22 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 ## Install
 
 >‼️ CAUTION‼️
-> ensure you change the configs 
-(update me -dev)
+
+> ensure you change the configs to suit your needs
+
+> change the hostname and username in .nix
+
+> 
 
 1. temporarily install git with ``nix-shell -p git`` and clone this repository using `sudo git clone https://github.com/Tayvall/NixoRice/` then cd into the cloned repository `cd NixoRice`
 
-2. ensure you remove my `harware-configuration.nix` and replace it with yours. remove it with `sudo rm -r hardware-configuration.nix` while inside the cloned repository. Then generate your `harware-configuration.nix` with `nixos-generate-config .#`
+2. ensure you remove my `harware-configuration.nix` and replace it with yours. remove it with `sudo rm -r hardware-configuration.nix` while inside the cloned repository. Then generate your `harware-configuration.nix` with `nixos-generate-config .#` inside the repository.
 
-3. The .config folder should also be placed in the respective **$HOME/user/.config** file path
+3. The .config folder should also be placed in the respective `$HOME/your-username/.config` file path with `sudo mv -r .config $HOME/your-username/`. The .nix files in `nixos/` should be moved to `/etc/nixos/`, do this with `sudo mv nixos/* /etc/nixos/`
 
--- once files are placed in the correct file paths run `sudo nixos-rebuild switch`
+4. once files are placed in the correct file paths run `sudo nixos-rebuild switch` to rebuild your system.
 
--- then just reboot and mess around idk...
+-- then just reboot with `reboot` and mess around with your new system!
 
 ## Keycombos
 
