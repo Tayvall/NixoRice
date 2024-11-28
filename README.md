@@ -14,15 +14,21 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 - [licensing](#-licensing)
 
 
+## Showcase
+
+(mr dev pwease pwut showcwase images here uwu)
+-
+-
+-
+
 ## Install
 
 >‼️ CAUTION‼️
 
 > ensure you change the configs to suit your needs
-
 > change the hostname and username in .nix
 
-> 
+you can check for username(tay) and hostname(tayvall) locations with the `rg` command. Example `rg --hidden "what to search for"`. if rg is not installed run `nix-shell -p ripgrep` to temporarily install it
 
 1. temporarily install git with ``nix-shell -p git`` and clone this repository using `sudo git clone https://github.com/Tayvall/NixoRice/` then cd into the cloned repository `cd NixoRice`
 
@@ -103,9 +109,11 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 
 
 ## To-Do
+- **Showcase images** add some images my goodness
 - **fix themeing** I have messed up with the themes so need to revisit it
 - **Flakes** -modularize my config to allow easier configuration. (move to flakes).
 - **HyperPanel** -add some more customization.
+- **improve some key functionality** add stuff like screenshotting and other helpfull tools
 - **Clean Up** -remove unessesary configs and setups to keep a clean basis to later improve on. 
 
 ## licensing
