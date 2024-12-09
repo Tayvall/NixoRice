@@ -41,7 +41,10 @@ you can check for username(tay) and hostname(tayvall) locations with the `rg` co
 -- then just reboot with `reboot` and mess around with your new system!
 
 <details>
-<summary>## Keycombos</summary>
+<summary>
+  
+  ## Keycombos
+</summary>
 <br>
   
 | Key Combination        | Action                       |
