@@ -40,8 +40,9 @@ you can check for username(tay) and hostname(tayvall) locations with the `rg` co
 
 -- then just reboot with `reboot` and mess around with your new system!
 
-## Keycombos
-
+<details>
+<summary>## Keycombos</summary>
+<br>
 | Key Combination        | Action                       |
 |------------------------|------------------------------|
 |Super + Q| "kill active window"|
@@ -106,6 +107,7 @@ you can check for username(tay) and hostname(tayvall) locations with the `rg` co
 |Super + Alt + 3| "movetoworkspace, 3 silently"|
 |Super + Alt + 4| "movetoworkspace, 4 silently"|
 |Super + Alt + 5| "movetoworkspace, 5 silently"|
+</details>
 
 
 ## To-Do
