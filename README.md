@@ -9,21 +9,21 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 > 
 > I am just starting this so everything is messy and janky.
 
-## Table of Contents
+## 📃Table of Contents
 - [Hyprland Keybinds](#-Keycombos)
 - [Components](#-components)
 - [To Do](#-To-Do)
 - [licensing](#-licensing)
 
 
-## Showcase
+## 👑Showcase
 
 (mr dev please put showcwase images here)
 -
 -
 -
 
-## Install
+## ⬇️Install⬇️
 
 > [!WARNING]
 > ensure you change the configs to suit your needs
@@ -45,7 +45,7 @@ you can check for username(tay) and hostname(tayvall) locations with the `rg` co
 <details>
 <summary>
   
-  ## ${{\color{Goldenrod}\Huge{\textsf{  Keycombos\ \}}}}\$
+  ## ${{\color{Goldenrod}\Huge{\textsf{  🔑Keycombos\ \}}}}\$
 </summary>
 <br>
   
@@ -116,7 +116,7 @@ you can check for username(tay) and hostname(tayvall) locations with the `rg` co
 </details>
 
 
-## To-Do
+## To-Do📚
 - **Showcase images** add some images my goodness
 - **fix themeing** I have messed up with the themes so need to revisit it
 - **Flakes** -modularize my config to allow easier configuration. (move to flakes).
