@@ -4,8 +4,9 @@
 My personal NixOS setup.
 Im planning to make a basic hyprland that is easiy to configure and can be a good starting point for new NixOS users
 
->**!!THIS IS A WORK IN PROGRESS!!**
->I am just starting this so everything is messy and janky. 
+> [!CAUTION]
+> **THIS IS A WIP!!**
+> I am just starting this so everything is messy and janky.
 
 ## Table of Contents
 - [Hyprland Keybinds](#-Keycombos)
@@ -16,7 +17,7 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 
 ## Showcase
 
-(mr dev pwease pwut showcwase images here uwu)
+(mr dev please put showcwase images here)
 -
 -
 -
