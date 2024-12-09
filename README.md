@@ -23,7 +23,7 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 -
 -
 
-## ⬇️Install⬇️
+## ${{\color{White}\Huge{\textsf{  ⬇️Install⬇️\ \}}}}\$ 
 
 > [!WARNING]
 > ensure you change the configs to suit your needs
