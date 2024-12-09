@@ -6,6 +6,7 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 
 > [!CAUTION]
 > **THIS IS A WIP!!**
+> 
 > I am just starting this so everything is messy and janky.
 
 ## Table of Contents
