@@ -43,6 +43,7 @@ you can check for username(tay) and hostname(tayvall) locations with the `rg` co
 <details>
 <summary>## Keycombos</summary>
 <br>
+  
 | Key Combination        | Action                       |
 |------------------------|------------------------------|
 |Super + Q| "kill active window"|
