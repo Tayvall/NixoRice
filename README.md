@@ -9,14 +9,14 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 > 
 > I am just starting this so everything is messy and janky.
 
-## 📃Table of Contents
+## ${{\color{White}\Huge{\textsf{  📃Table of Contents\ \}}}}\$
 - [Hyprland Keybinds](#-Keycombos)
 - [Components](#-components)
 - [To Do](#-To-Do)
 - [licensing](#-licensing)
 
 
-## 👑Showcase
+## ${{\color{White}\Huge{\textsf{  👑Showcase\ \}}}}\$
 
 (mr dev please put showcwase images here)
 -
