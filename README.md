@@ -43,8 +43,7 @@ you can check for username(tay) and hostname(tayvall) locations with the `rg` co
 <details>
 <summary>
   
-  ## Keycombos
-  ${{\color{Goldenrod}\Huge{\textsf{  Keycombos\ \}}}}\$
+  ## ${{\color{Goldenrod}\Huge{\textsf{  Keycombos\ \}}}}\$
 </summary>
 <br>
   
