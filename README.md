@@ -25,9 +25,9 @@ Im planning to make a basic hyprland that is easiy to configure and can be a goo
 
 ## Install
 
->‼️ CAUTION‼️
-
+> [!WARNING]
 > ensure you change the configs to suit your needs
+> 
 > change the hostname and username in .nix
 
 you can check for username(tay) and hostname(tayvall) locations with the `rg` command. Example `rg --hidden "what to search for"`. if rg is not installed run `nix-shell -p ripgrep` to temporarily install it
